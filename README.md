@@ -4,6 +4,8 @@ meteor-patterns
 How to develop on Windows?
 https://gist.github.com/hamxiaoz/9901423
 
+`mrt install`
+
 ## Dev
 
 ## Generator
