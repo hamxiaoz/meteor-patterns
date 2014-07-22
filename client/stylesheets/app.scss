@@ -11,6 +11,22 @@ header {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* sidebar */
+.sidebar {
+  margin-top: 20px;
+
+  li.active > a {
+    color: black;
+    font-weight: bold;
+    background-color: #f7f5fa;
+  }
+
+  .nav>li>a {
+    padding-left: 30px;
+  }
+}
+
+
 .not-allowed {
   cursor: not-allowed;
 }
