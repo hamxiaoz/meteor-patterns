@@ -2,23 +2,23 @@ Reason: the long list is a big list and it takes time to render. Here is the sol
 
 Main UI
 
-````html
+```jade
 a(href='#' data-modal-id='supported')#launch-modal View
 +viewSupportedModal id='supported' renderToggler='supported.render' longList=things
-````
+```
 
-````js
+```coffeescript
 Template.main.events
   'click #launch-modal': (e)->
     e.preventDefault()
 
     id = $(e.target).attr('data-modal-id')
     $("##{id}").modal 'show'
-````
+```
 
-Tempalte
+Template
 
-````html
+```jade
 template(name='viewSupportedModal')
   .modal(id="{{id}}", data-renderToggler="{{renderToggler}}" tabindex="-1", role="dialog", aria-hidden="true")
     .modal-dialog
@@ -41,10 +41,10 @@ template(name='viewSupportedModal')
         .modal-footer
           button.btn.btn-default.btn-link.close-modal(type="button")
             span.text-muted Close
-````
+```
 
 
-````js
+```js
 Template.viewSupportedModal.rendered = ->
   $('.modal').on 'shown.bs.modal', (e)->
     Session.set $('.modal').attr('data-renderToggler'), true
@@ -55,4 +55,4 @@ Template.viewSupportedModal.events
 
     $('.modal').modal 'hide'
     Session.set $('.modal').attr('data-renderToggler'), false
-````
+```
