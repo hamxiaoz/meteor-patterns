@@ -1,0 +1,6 @@
+template(name="settingsSidebar")
+  ul.nav.sidebar
+    li(class="{{activeIf currentPathName 'fields'}}")
+      a(href="{{pathFor 'fields'}}") Fields
+    li(class="{{activeIf currentPathName 'tools'}}")
+      a(href="{{pathFor 'tools'}}") Tools

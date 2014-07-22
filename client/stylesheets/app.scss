@@ -1,0 +1,138 @@
+@import 'packages/bootstrap3-sass/bootstrap';
+@import 'packages/font-awesome-sass/font-awesome';
+// @import "variables.scss";
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body { }
+
+header {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.section-header {
+  color: #B3B3B1;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+a.gray {
+  color: lighten(black, 50%);
+  :hover, :focus {
+   color: black;
+  }
+}
+
+
+
+.code-wrap {
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+.form-control-static.has-error {
+  border: 1px solid #a94442;
+}
+
+
+#popover-container {
+  display: none;
+}
+
+.popup-editor {
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  // animation
+  -webkit-animation-duration: 0.3s;
+  -ms-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+}
+
+.navbar {
+   margin-bottom: 0px;
+}
+
+.slim-checkbox {
+   font-weight: normal;
+   cursor: pointer;
+   span {
+      margin-left: 5px;
+   }
+}
+
+.gray {
+   color: gray;
+}
+
+.rmargin {
+   margin-right: 10px;
+}
+
+a.plain {
+  color: black;
+  &:hover 
+  &:focus {
+    color: black;
+  }
+}
+
+.navbar-default .navbar-text.label{
+  color: white;
+}
+
+ul.compact {
+  padding-left: 20px;
+}
+
+/* Faded out hr */
+hr.soften {
+  height: 1px;
+  // margin: 30px 0;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============================================================================
+   Header
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+// #main {margin-top: 20px;}
+
+/* ==========================================================================
+   Templates
+   ========================================================================== */
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+// @media (min-width: @screen-sm) {}
+
+// @media (min-width: @screen-md) {}
+
+// @media (min-width: @screen-lg) {}

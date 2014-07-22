@@ -1,0 +1,17 @@
+head
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(name="description", content="Meteor Patterns")
+  title Meteor Patterns
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+template(name="layout")
+  <!--[if lt IE 9]> <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p> <![endif]-->
+
+  div
+    +header
+  div.container-fluid
+    +flashMessages
+  div.container-fluid.content
+    +yield
+  div
+    +footer

@@ -1,0 +1,30 @@
+template(name="header")
+  header
+    nav.navbar.navbar-default(role="navigation")
+      .container-fluid
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          button.navbar-toggle(type="button", data-toggle="collapse", data-target="#bs-example-navbar-collapse-1")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="{{pathFor 'home'}}") Meteor Patterns
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.navbar-nav
+            if currentUser
+              li(class="{{activeIfStarts currentPath '/settings'}}")
+                a(href="{{pathFor 'fields'}}") Settings
+              if isInRole 'view-debug-menu'
+                li(class="{{activeIf currentPathName 'debug'}}")
+                  a(href="{{pathFor 'debug'}}") DEBUG
+              p.navbar-text {{rev}}
+          ul.nav.navbar-nav.navbar-right
+            if isInRole 'admin'
+              li(class="{{activeIf currentPathName 'admin'}}")
+                a(href="{{pathFor 'admin'}}") 
+                  span.label.label-primary Admin
+            li.navbar-text
+              +loginButtons

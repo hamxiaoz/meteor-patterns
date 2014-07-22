@@ -1,0 +1,3 @@
+Some libraries only work when placed in ../client/compatibility
+subdirectory. Mostly because this directory is for libraries that
+create global variables.
