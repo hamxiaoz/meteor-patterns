@@ -18,6 +18,8 @@ Template.main.events
 
 Template
 
+**NOTE** I use the same UI (ul/li) for loading. This concept "Skeleton Templates" borrows from [Design for Realtime](http://blog.percolatestudio.com/design/design-for-realtime/)
+
 ```jade
 template(name='viewSupportedModal')
   .modal(id="{{id}}", data-renderToggler="{{renderToggler}}" tabindex="-1", role="dialog", aria-hidden="true")
