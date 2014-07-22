@@ -44,7 +44,7 @@ template(name='viewSupportedModal')
 ```
 
 
-```js
+```coffeescript
 Template.viewSupportedModal.rendered = ->
   $('.modal').on 'shown.bs.modal', (e)->
     Session.set $('.modal').attr('data-renderToggler'), true
