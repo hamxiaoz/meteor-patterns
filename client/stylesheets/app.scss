@@ -1,6 +1,8 @@
+// override bootstrap here
+$modal-backdrop-bg: #aaa;
+
 @import 'packages/bootstrap3-sass/bootstrap';
 @import 'packages/font-awesome-sass/font-awesome';
-// @import "variables.scss";
 
 /* ==========================================================================
    Base
