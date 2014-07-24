@@ -6,7 +6,7 @@ form#form
   button.btn.btn-primary(type='submit') Go
 ```
 
-```coffeescript
+```coffee
 Template.view.events
   'input .search-string': (e)->
     updateButtonEnabled(e)
