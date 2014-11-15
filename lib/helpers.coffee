@@ -12,6 +12,7 @@ Array.prototype.eachSlice = function (size, callback){
   }
 };
 `
+# TODO use underscore.string
 # string.startsWith and endsWith
 # http://stackoverflow.com/a/646643/166286
 # http://stackoverflow.com/a/2548133

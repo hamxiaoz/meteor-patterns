@@ -58,7 +58,7 @@ cfs:s3
 
 # npm
 meteorhacks:npm
-# npm-container
+npm-container
 
 # email, metric etc
 timmyg13:mandrill
@@ -68,9 +68,12 @@ meteorhacks:kadira
 percolatestudio:percolatestudio-mixpanel
 
 # browser support
-tmeasday:html5-history-api
+# tmeasday:html5-history-api # iron router has it
 
-# misc domain helpers
+# helpers
+mrt:underscore-string-latest
+
+# domain helpers
 usefulio:atomic-counter
 axw:json2csv
 percolatestudio:synced-cron
@@ -78,7 +81,3 @@ kestanous:herald
 
 # watch list: they don't work well
 # menway:jquery-datatables
-
-
-
-npm-container

@@ -2,7 +2,7 @@
 Router.configure
   layoutTemplate: 'layout'
   loadingTemplate: 'loading'
-  notFoundTemplate: 'not_found'
+  notFoundTemplate: '404'
   # TODO enable this to use ga
   # trackPageView: true # https://github.com/reywood/meteor-iron-router-ga
 

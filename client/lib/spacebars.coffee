@@ -11,6 +11,22 @@ Blaze.registerHelper 'dateStr', (date)->
 Blaze.registerHelper 'dateStrFull', (date)->
   return moment(date).format('MM/DD/YYYY LT')
 
+# Outputs e.g. 12 days ago or 2 hours ago
+Blaze.registerHelper 'showTimeAgo', (date)->
+  return moment(date).fromNow()
+
+# Outputs e.g. Jan, 2013
+Blaze.registerHelper 'showMonthYear', (date)->
+  return moment(date).format("MMM, YYYY")
+
+# Outputs e.g. 12th Jan, 2013
+Blaze.registerHelper 'showDayMonthYear', (date)->
+  return moment(date).format("Do MMM, YYYY")
+
+# Outputs August 30th 2014, 5:33:46 pm
+Blaze.registerHelper 'showPrettyTimestamp', (date)->
+  return moment(date).format("MMMM Do YYYY, h:mm:ss a")
+
 Blaze.registerHelper 'acronymEmail', (email)->
   if email?
     return email.substring(0,2).toUpperCase()
@@ -41,17 +57,21 @@ Blaze.registerHelper 'activeIfStarts', (str1, str2)->
 Blaze.registerHelper 'ifThen', (cp1, cp2, strWhenTrue, strWhenFalse)->
   if cp1 == cp2 then return strWhenTrue else return strWhenFalse
 
+# TODO use underscore.string?
 Blaze.registerHelper 'idfy', (str)->
   return idEncode(str, '')
 
+# TODO use underscore.string?
 Blaze.registerHelper 'idfy', (str, str2, str3)->
   return idEncode(str+str2+str3, '') 
 
+# TODO use https://github.com/zimme/meteor-iron-router-active?
 # get path name: 'debug', instead of '/debug'
 Blaze.registerHelper 'currentPathName', ->
   current = Router.current()
   if current? then return current.route.getName() else return ''
 
+# TODO use https://github.com/zimme/meteor-iron-router-active?
 # get the path: '/a/bc'
 Blaze.registerHelper 'currentPath', ->
   current = Router.current()
