@@ -1,8 +1,8 @@
 // override bootstrap here
 $modal-backdrop-bg: #aaa;
 
-@import 'packages/bootstrap3-sass/bootstrap';
-@import 'packages/font-awesome-sass/font-awesome';
+@import '.meteor/local/build/programs/server/assets/packages/reywood_bootstrap3-sass/bootstrap';
+@import '.meteor/local/build/programs/server/assets/packages/reywood_font-awesome-sass/font-awesome';
 
 /* ==========================================================================
    Base

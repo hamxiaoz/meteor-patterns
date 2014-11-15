@@ -3,36 +3,82 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
+# core
+meteor-platform
 browser-policy
-jquery
-coffeescript
-underscore
-accounts-base
-accounts-password
-accounts-ui
-spin
-jade
-simple-schema
-iron-router
-collection-helpers
 email
 http
-mandrill
-roles
-flash-messages
-collection2
-autoform
-npm
-handlebar-helpers
-reststop2
-font-awesome-sass
-select2
-jquery-datatables
-select2-bootstrap3-css
-bootstrap-colorpicker-2
-toastr
-percolatestudio-mixpanel
-accounts-admin-ui-bootstrap-3
-bootstrap3-sass
-scss
+
+# accounts
+accounts-ui
+accounts-password
+
+# personal tates
+coffeescript
+mquandalle:jade
+
+# SASS
+fourseven:scss
+reywood:font-awesome-sass
+reywood:bootstrap3-sass
+
+# UI helpers
+raix:handlebar-helpers
+mrt:moment
+chrismbeckett:toastr
+sacha:spin
+mrt:flash-messages
+tsega:bootstrap3-datetimepicker
+natestrauser:select2
+zimme:select2-bootstrap3-css
+
+# predefined UI
+mrt:accounts-admin-ui-bootstrap-3
+
+# routing
+iron:router
+reywood:iron-router-ga
+
+# model helper
+aldeed:simple-schema
+dburles:collection-helpers
+aldeed:collection2
+aldeed:autoform
+aldeed:delete-button
+alanning:roles
+
+# enhancement
+meteorhacks:subs-manager
+
+# cfs
+cfs:standard-packages
+cfs:filesystem
+cfs:ui
+cfs:s3
+
+# npm
+meteorhacks:npm
+# npm-container
+
+# email, metric etc
+timmyg13:mandrill
+meteorhacks:kadira
+
+# NOTE not maintained
+percolatestudio:percolatestudio-mixpanel
+
+# browser support
+tmeasday:html5-history-api
+
+# misc domain helpers
+usefulio:atomic-counter
+axw:json2csv
+percolatestudio:synced-cron
+kestanous:herald
+
+# watch list: they don't work well
+# menway:jquery-datatables
+
+
+
+npm-container

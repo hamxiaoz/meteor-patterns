@@ -1,61 +1,65 @@
-UI.registerHelper 'sessionGet', (input, subKey)->
+Blaze.registerHelper 'sessionGet', (input, subKey)->
   obj = Session.get(input)
   if obj? 
     return obj[subKey] 
   else 
     return obj
 
-UI.registerHelper 'dateStr', (date)->
+Blaze.registerHelper 'dateStr', (date)->
   return moment(date).format('L')
 
-UI.registerHelper 'dateStrFull', (date)->
+Blaze.registerHelper 'dateStrFull', (date)->
   return moment(date).format('MM/DD/YYYY LT')
 
-UI.registerHelper 'acronymEmail', (email)->
+Blaze.registerHelper 'acronymEmail', (email)->
   if email?
     return email.substring(0,2).toUpperCase()
   else
     return ''
 
-UI.registerHelper 'rev', ->
+Blaze.registerHelper 'rev', ->
   return 'rev ' + Meteor.settings.public.rev
 
 # Utility
 
-UI.registerHelper 'humanizeBoolean', (booleanValue)->
+Blaze.registerHelper 'humanizeBoolean', (booleanValue)->
   if booleanValue 
     return 'Yes'
   else
     return 'No'
 
-UI.registerHelper 'activeIf', (str1, str2)->
+Blaze.registerHelper 'activeIf', (str1, str2)->
   if str1 == str2 then return 'active' else return ''
 
 # HACK you cannot write array in template and use it in helper
 # http://stackoverflow.com/questions/16783463/pass-array-written-in-template-to-meteor-handlebars-helper
 # doens't work:
 #   li(class="{{activeIf CurrentPathName ['tools', 'directDownload', 'essUsage'] }}")
-UI.registerHelper 'activeIfStarts', (str1, str2)->
+Blaze.registerHelper 'activeIfStarts', (str1, str2)->
   if str1.startsWith str2 then return 'active' else return ''
 
-UI.registerHelper 'ifThen', (cp1, cp2, strWhenTrue, strWhenFalse)->
+Blaze.registerHelper 'ifThen', (cp1, cp2, strWhenTrue, strWhenFalse)->
   if cp1 == cp2 then return strWhenTrue else return strWhenFalse
 
-UI.registerHelper 'idfy', (str)->
+Blaze.registerHelper 'idfy', (str)->
   return idEncode(str, '')
 
-UI.registerHelper 'idfy', (str, str2, str3)->
+Blaze.registerHelper 'idfy', (str, str2, str3)->
   return idEncode(str+str2+str3, '') 
 
 # get path name: 'debug', instead of '/debug'
-UI.registerHelper 'currentPathName', ->
+Blaze.registerHelper 'currentPathName', ->
   current = Router.current()
-  if current? then return current.route.name else return ''
+  if current? then return current.route.getName() else return ''
 
 # get the path: '/a/bc'
-UI.registerHelper 'currentPath', ->
+Blaze.registerHelper 'currentPath', ->
   current = Router.current()
-  if current? then return current.path else return ''
+  if current? then return current.route._path else return ''
+
+# autoform delete form requires random id: https://github.com/aldeed/meteor-autoform/issues/256
+Blaze.registerHelper "deleteID", ->
+  return Random.id()
 
 # app specific
 # ============

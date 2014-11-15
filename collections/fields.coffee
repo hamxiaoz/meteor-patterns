@@ -1,8 +1,11 @@
-@EventTags = new Meteor.Collection "eventTags",
-  schema: new SimpleSchema
-    name:
-      type: String
-      min: 1
+share.EventTags = @EventTags = EventTags = new Mongo.Collection "eventTags"
+
+EventTagSchema = new SimpleSchema
+  name:
+    type: String
+    min: 1
+
+EventTags.attachSchema EventTagSchema
 
 EventTags.allow
   insert: (userId, doc)->

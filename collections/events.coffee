@@ -1,8 +1,12 @@
-@Events = new Meteor.Collection "events",
+share.Events = @Events = Events = new Mongo.Collection "events"
+
+EventSchema = new SimpleSchema
   name:
     type: String
   tagIds:
     type: [String]
+
+Events.attachSchema EventSchema
 
 Events.helpers
   tags: ->
