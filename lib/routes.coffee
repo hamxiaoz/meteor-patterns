@@ -43,15 +43,6 @@ Router.onBeforeAction ->
 #   --- routes ------------------------------------------------------
 Router.route '/',
   name: 'home'
-  waitOn: ->
-    return [
-      Meteor.subscribe('events')
-    ]
-  data: ->
-    if @ready()
-      return {
-        events: Events.find {}, {sort:{'name':1}}
-      }
 
 Router.route '/admin',
   name: 'admin' 
@@ -60,7 +51,7 @@ Router.route '/admin',
 Router.route '/debug',
   name: 'debug'
 
-Router.route 'settings/fields',
+Router.route '/settings/fields',
   name: 'fields'
   waitOn: ->
     return [
@@ -72,7 +63,47 @@ Router.route 'settings/fields',
         eventTags: EventTags.find {}, {sort:{'name':1}}
       }
 
-Router.route 'settings/tools',
-  name: 'tools',
+Router.route '/settings/tools',
+  name: 'tools'
+
+# RESTfule for events
+Router.route '/events',
+  name: 'events'
+  waitOn: ->
+    return [
+      Meteor.subscribe('events')
+    ]
+  data: ->
+    if @ready()
+      return {
+        allEvents: Events.find {}, {sort:{'createdAt':1}}
+      }
+
+# NOTE the order is important, put this route before the show and edit ones
+Router.route '/events/new',
+  name: 'newEvent'
  
+Router.route '/events/:_id',
+  name: 'showEvent'
+  waitOn: ->
+    return [
+      Meteor.subscribe 'event', @params._id
+    ]
+  data: ->
+    if @ready()
+      return {
+        event: Events.findOne @params._id
+      }
+ 
+Router.route '/events/:_id/edit',
+  name: 'editEvent'
+  waitOn: ->
+    return [
+      Meteor.subscribe 'event', @params._id
+    ]
+  data: ->
+    if @ready()
+      return {
+        event: Events.findOne @params._id
+      }
  

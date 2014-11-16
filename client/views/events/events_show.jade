@@ -1,0 +1,9 @@
+template(name='showEvent')
+  .row
+    .col-md-12
+      with event
+        h1 
+          span {{name}}
+          a.btn.btn-info.pull-right(href="{{pathFor 'editEvent'}}") Edit
+        hr
+        p {{details}}

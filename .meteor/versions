@@ -91,6 +91,7 @@ mquandalle:jade@0.2.9
 mrt:accounts-admin-ui-bootstrap-3@0.2.7
 mrt:flash-messages@1.0.0
 mrt:moment@2.8.1
+mrt:underscore-string-latest@2.3.3
 natestrauser:select2@3.5.1
 npm-bcrypt@0.7.7
 npm-container@1.0.0
@@ -119,7 +120,6 @@ srp@1.0.1
 standard-app-packages@1.0.3
 templating@1.0.9
 timmyg13:mandrill@0.0.6
-tmeasday:html5-history-api@4.1.2
 tracker@1.0.3
 tsega:bootstrap3-datetimepicker@0.4.0
 ui@1.0.4

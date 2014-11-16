@@ -1,0 +1,9 @@
+template(name='newEvent')
+  .row
+    .col-md-12
+      h1 New Event
+      +autoForm id='newEventForm' collection='Events' type='insert'
+        fieldset
+          +afQuickField name='name'
+          +afQuickField name='details' rows=9 placeholder='Input some event details'
+        button.btn.btn-primary.btn-block(type='submit') Create

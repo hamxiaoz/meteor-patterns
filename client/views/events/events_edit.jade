@@ -1,0 +1,11 @@
+template(name='editEvent')
+  .row
+    .col-md-12
+      h1 
+        span Edit Event
+        a.btn.btn-default.pull-right.cancel(hfre='#') Cancel
+      +autoForm id='editEventForm' collection='Events' doc=this.event type='update'
+        fieldset
+          +afQuickField name='name'
+          +afQuickField name='details' rows=9 placeholder='Input some event details'
+        button.btn.btn-primary.btn-block(type='submit') Save

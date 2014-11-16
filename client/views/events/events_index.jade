@@ -1,0 +1,23 @@
+template(name='events')
+  .row
+    .col-md-12
+      h1 All Events
+      a.btn.btn-primary.pull-right(href='{{pathFor "newEvent"}}') New
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th Created
+            th Updated
+            th Actions
+        tbody
+          +each allEvents
+            tr
+              td
+                a(href='{{pathFor "showEvent"}}') #{name}
+              td {{dateStrFull createdAt}}
+              td {{showTimeAgo updatedAt}}
+              td 
+                .btn-group
+                  a.btn.btn-primary(href='{{pathFor "editEvent"}}') Edit
+                  +quickRemoveButton collection='Events' _id=this._id beforeRemove=beforeRemove onError=onErrorRemove  onSuccess=onSuccessRemove class='btn btn-danger'
