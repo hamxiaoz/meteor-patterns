@@ -14,6 +14,7 @@ EventSchema = new SimpleSchema
   updatedAt:
     type: Date
     denyInsert: true
+    optional: true
     autoValue: ->
       if this.isUpdate
         return new Date()
