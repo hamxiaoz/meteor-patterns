@@ -1,3 +1,3 @@
 #!/bin/sh
 # copy to server
-scp -C -p ../app.tgz name@host:/folder
+scp -C -p ../release/APPNAME.tar.gz name@host:/folder

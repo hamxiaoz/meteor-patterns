@@ -1,4 +1,4 @@
 #!/bin/sh
 cd ..
-rm app.tgz
-meteor bundle app.tgz
+rm ./release/APPNAME.tar.gz
+meteor build ./release
